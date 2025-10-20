@@ -31,8 +31,8 @@ let b2 = 9; // var b2 = 9;
 }
 console.log(b2);  
   
-// Primitive  DataTypes
-let x = "Bahi Umair";
+// Primitive (Pre-Defined) DataTypes
+let x = "CEO Umair";
 let y = 22;
 let z = 3.55;
 const p = "true";
@@ -42,7 +42,7 @@ let r = null;
 console.log(x,y,z,p,q,r);
 console.log(typeof x,typeof y,typeof z,typeof p,typeof q,typeof r);
 // Why typeof null is object?
-// StackOverflow Short Answer : This is a bug since the first release of ECMAScript(Standered for JS) which unfortunately can’t be fixed because it would break the existing code. Many JS Experts calls it a mistake but it can be removed bcz a large code would break if we change the datatypeof null as null.
+// StackOverflow Short Answer : This is a bug since the first release of ECMAScript(Standard for JS) which unfortunately can’t be fixed because it would break the existing code. Many JS Experts calls it a mistake but it can be removed bcz a large code would break if we change the datatypeof null as null.
 
 // Objects in JS
 let o = {
