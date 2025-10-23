@@ -34,6 +34,9 @@ let h1 = 10;
 h1 -= 1; // b is now 9
 console.log(h1); // Output: 9
 
+// ++a; means First Use then Update a
+// a++; means First Update then Use
+
 // Assignment Operators
 // "=" as let x = 4; let y = 3;
 // "+=" as x += y; Or x = x + y;

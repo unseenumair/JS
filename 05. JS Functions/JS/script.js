@@ -23,6 +23,11 @@ console.log("The sum of these numbers is:", result1); // Printing the returned v
 console.log("The sum of these numbers is:", result2);
 console.log("The sum of these numbers is:", result3);
 
+// console.log() always add a new line at the end , if you want to avoid it use process.stdout.write()
+
+// instead of writing mix message use formating string like
+// console.log("%s is our %s",  name, role);
+
 // Arrow function: A shorter way to define functions
 
 const func1 = (x) => { // Function name: func1, parameter: x
@@ -49,11 +54,6 @@ func1(99);
 // Use case: Converting string input from prompts or form fields to numbers for calculations.
 let ageString = prompt("Enter your age:");
 let age = Number(ageString); // Convert the string to a number
-if (Number.isNaN(age)) { // Check if the conversion failed (non-numeric input)
-    alert("Invalid age input.");
-} else {
-    console.log("Your age is:", age);
-}
 
 // isNaN(): Checks if a value is "Not a Number".  Returns true if the value is NaN, false otherwise.
 // Use case: Validating user input to ensure it's a number.
