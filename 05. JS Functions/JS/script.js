@@ -98,5 +98,8 @@ let priceString2 = "19.99 dollars";
 let price2 = parseFloat(priceString2); // price2 will be 19.99 (ignores " dollars")
 console.log("Price:", price2);
 
+// eval(): Executes strings
+eval(`3 + 5`); // Output: 8
+
 // Important:  These are just a few of the many built-in functions in JavaScript.  
 // Explore the documentation for more!

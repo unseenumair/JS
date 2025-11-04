@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Events Bubbling</title>
+	<!-- <link rel="icon" href="https://cdn.jsdelivr.net/gh/unseenumair/assets/icons/js.svg" type="image/svg+xml"> -->
+	<style>
+		#cont,
+		#childCont,
+		#child {
+			display: block;
+			padding: 20px;
+			border: 1px solid black;
+			border-radius: 10px;
+		}
+
+		#cont {
+			background: black;
+		}
+
+		#childCont {
+			background: linear-gradient(45deg, blue, royalblue);
+		}
+
+		#child {
+			background: linear-gradient(45deg, darkblue, transparent);
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="cont">
+		<span id="childCont">
+			<div id="child">
+				I am a Child
+			</div>
+		</span>
+	</div>
+	<script>
+		// Clicking on Child means you also clicked on ChildCont and also on Cont. So, ALL Events will be activated
+		document.querySelector("#child").addEventListener("click", ()=>{ 
+			alert("Child was Clicked");
+		});
+		
+		document.querySelector("#childCont").addEventListener("click", (e)=>{
+			e.stopPropagation(); // Prevents further Events Bubbling
+			alert("ChildCont was Clicked");
+		});
+		
+		document.querySelector("#cont").addEventListener("click", ()=>{
+			alert("Cont was Clicked");
+		});
+
+
+		function generateColor(){
+		    let codes = ["a", "b", "c", "d", "e", "f"];
+		
+		    for (let x = 0; x <= 9; x++){
+		        codes.push(x);
+		    }
+		
+		    let randomIndex, randomValue;
+		    let colorCodes = [];
+		    
+		    for (let y = 0; y < 6; y++){
+		        randomIndex = Math.floor(Math.random() * codes.length);
+		        randomValue = codes[randomIndex];
+		
+		        colorCodes.push(randomValue);
+		    }
+		
+		    let color = `#${colorCodes.join("")}`; // Hex Color Code
+		    return color;
+		}
+		
+		// SetInterval() is used to do something repeadtly after certain interval of time
+		let a = setInterval(()=>{
+			document.querySelector("#childCont").style.background = generateColor();
+		}, 1000); // Repeat After 1000 milli seconds
+		
+		console.log(a);
+		
+		// clearInterval(a);  // You can stop interval by executing clearInterval(codeOfsetInterval);
+
+		// SetTimeout() is used to do something for only one time after a certain interval of time
+		/* let b = setTimeout(()=>{
+				document.querySelector("#childCont").style.background = generateColor();
+			}, 1000); // Start After 1000 milli seconds
+		
+		console.log(b);
+		*/
+
+		// clearTimeout(b);  // You can stop timeout by executing clearTimeout(codeOftimeout);
+	</script>
+</body>
+</html>
